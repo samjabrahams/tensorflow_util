@@ -44,7 +44,7 @@ INPUT_DIRECTORY = '../../tensorflow/tensorflow/g3doc/api_docs/*/'
 OUTPUT_DIRECTORY = '../out/add_header_permalink_test'
 
 # Switch this to True if you want to simply overwrite the existing files
-OVERWRITE = False
+OVERWRITE = True
 
 # Given a string path to a file, returns the file name plus extension
 def get_file_name_from_path(path):
@@ -66,6 +66,9 @@ ph = re.compile('^#+ .*')
 
 # RegEx pattern for matching it contains the markdown id syntax '{#SOMESETOFCHARACTERS}'
 pb = re.compile(r".*\{#.+\}.*")
+
+# RegEx pattern for matching lines that already contain a header link
+pl = re.compile(r"^#+.*[.+](.+).*\{#.+\}.*")
 
 
 # Ensure that input/output direcories are properly formatted
@@ -97,6 +100,12 @@ for filePath in glob.glob(INPUT_DIRECTORY + '*.md'):
 			# Check to see if startIndex exists, if not, print to console, print the regular line, and continue
 			if startIndex == -1 or openBraceIndex == -1 or closeBraceIndex == -1:
 				print "Something weird going on in " + filePath + ":\r\n\t" + line 
+				text += line
+				continue
+
+			# Check to see if line already has a link
+			if pl.match(line):
+				print "'" + line + "' is already a linked header"
 				text += line
 				continue
 
