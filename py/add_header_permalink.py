@@ -44,7 +44,7 @@ INPUT_DIRECTORY = '../../tensorflow/tensorflow/g3doc/api_docs/*/'
 OUTPUT_DIRECTORY = '../out/add_header_permalink_test'
 
 # Switch this to True if you want to simply overwrite the existing files
-OVERWRITE = True
+OVERWRITE = False
 
 # Given a string path to a file, returns the file name plus extension
 def get_file_name_from_path(path):
