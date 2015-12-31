@@ -39,12 +39,12 @@ import os
 import sys, getopt
 
 # Directory or Directories to look for markdown files
-INPUT_DIRECTORY = '../../tensorflow/tensorflow/g3doc/how_tos/*/'
+INPUT_DIRECTORY = '../../tensorflow/tensorflow/*/*/*/*/*'
 # Directory to output to
 OUTPUT_DIRECTORY = '../out/change_header_anchor_links_test'
 
 # Switch this to True if you want to simply overwrite the existing files
-OVERWRITE = False
+OVERWRITE = True
 
 # Given a string path to a file, returns the file name plus extension
 def get_file_name_from_path(path):
@@ -92,9 +92,6 @@ def create_anchor_from_header(header, existingAnchors=None):
 	
 	return out
 
-
-
-
 # RegEx pattern for matching markdown headers (starts with one or more '#' symbols followed by a space, then any number of characters)
 ph = re.compile('^#+ ')
 
@@ -117,7 +114,6 @@ OUTPUT_DIRECTORY = end_path_in_slash(OUTPUT_DIRECTORY)
 filePaths = glob.glob(INPUT_DIRECTORY + '*.md')
 
 for filePath in filePaths:
-
 	# Dictionary that maps old headers to the new syntax
 	headers = {}
 
