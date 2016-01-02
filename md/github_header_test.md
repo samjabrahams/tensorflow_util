@@ -7,3 +7,5 @@
 ## now_we_are testing underscores------%-------
 
 ## What happens whén we uße nön-eñglish characters?
+
+## what%#$about multiple...//()(odd characters between$$#@!/,.,.';'"[][[[[]}{words?
