@@ -11,3 +11,20 @@
 ## what%#$about multiple...//()(odd characters between$$#@!/,.,.';'"[][[[[]}{words?
 
 ## Header ends with ellipses, but anchor ends with hyphen? ...
+
+### Duplicate header
+
+### Duplicate header
+
+### Duplicate header
+
+### Duplicate header
+
+### Duplicate header
+
+### Duplicate header
+
+### Duplicate header
+
+### Duplicate header
+
