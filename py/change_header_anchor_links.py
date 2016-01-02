@@ -39,12 +39,12 @@ import os
 import sys, getopt
 
 # Directory or Directories to look for markdown files
-INPUT_DIRECTORY = '../../tensorflow/tensorflow/*/*/*/*/*'
+INPUT_DIRECTORY = '../../tensorflow/tensorflow/*/*'
 # Directory to output to
 OUTPUT_DIRECTORY = '../out/change_header_anchor_links_test'
 
 # Switch this to True if you want to simply overwrite the existing files
-OVERWRITE = True
+OVERWRITE = False
 
 # Given a string path to a file, returns the file name plus extension
 def get_file_name_from_path(path):
@@ -74,8 +74,8 @@ def create_anchor_from_header(header, existingAnchors=None):
 	# Strip white space on the left/right and make lower case
 	out = header.strip().lower()
 
-	# Replace non-alphanumeric characters, hyphens, and spaces with spaces
-	out = re.sub(r"[^\w\- ]+", lambda x: " ", out)
+	# Remove characters that aren't alphanumeric, hyphens, or spaces
+	out = re.sub(r"[^\w\- ]+", lambda x: "", out)
 
 	# Replace groups of white space with hyphens
 	out = re.sub(r"\s+", lambda x: "-", out)
