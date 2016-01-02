@@ -9,3 +9,5 @@
 ## What happens whén we uße nön-eñglish characters?
 
 ## what%#$about multiple...//()(odd characters between$$#@!/,.,.';'"[][[[[]}{words?
+
+## Header ends with ellipses, but anchor ends with hyphen? ...
