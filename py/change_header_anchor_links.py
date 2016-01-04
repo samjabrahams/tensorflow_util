@@ -74,14 +74,11 @@ def create_anchor_from_header(header, existingAnchors=None):
 	# Strip white space on the left/right and make lower case
 	out = header.strip().lower()
 
-	# Remove characters that aren't alphanumeric, hyphens, or spaces
-	out = re.sub(r"[^\w\- ]+", lambda x: "", out)
-
 	# Replace groups of white space with hyphens
-	out = re.sub(r"\s+", lambda x: "-", out)
+	out = re.sub(r"\s+", lambda x: "-", out, flags=re.UNICODE)
 
-	# Remove any amount of hyphens at the end of the header
-	out = re.sub(r"\-+$", "", out)
+	# Remove characters that aren't alphanumeric, hyphens, or spaces
+	out = re.sub(r"[^\w\- ]+", lambda x: "", out, flags=re.UNICODE)
 
 	if existingAnchors:
 		if out in existingAnchors:
